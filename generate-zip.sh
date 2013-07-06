@@ -17,7 +17,7 @@ cat <<EOF > dist/public.xml
 <plugin name="RandomAlbum" version="$VERSION" minTarget="7.5" maxTarget="*">
 <title lang="EN">Random Album</title>
 <desc lang="EN">Picks albums at random from your music library and displays them on a web page where they can be clicked to play. Works great on tablets where the standard web UI falls short.</desc>
-<url>https://raw.github.com/anderskaplan/slim-random-album/master/dist/RandomAlbum.zip</url>
+<url>http://villamexi.se/slim-plugin/RandomAlbum.zip</url>
 <link>https://github.com/anderskaplan/slim-random-album</link>
 <sha>$SHA</sha>
 <creator>Anders Kaplan</creator>
