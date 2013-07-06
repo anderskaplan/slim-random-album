@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<extension>
+  <id>E2A9D1EA-3C26-407C-BB4A-3C3419D897BF</id>
+  <name>PLUGIN_RANDOM_ALBUM</name>
+  <module>Plugins::RandomAlbum::Plugin</module>
+  <version>1.0</version>
+  <description>PLUGIN_RANDOM_ALBUM_DESC</description>
+  <creator>Anders Kaplan</creator>
+  <defaultState>enabled</defaultState>
+  <homepageURL>https://github.com/anderskaplan/slim-random-album</homepageURL>
+  <type>2</type>
+  <icon>plugins/RandomAlbum/html/images/icon.png</icon>
+  <targetApplication>
+    <id>SqueezeCenter</id>
+    <minVersion>7.0a</minVersion>
+    <maxVersion>7+</maxVersion>
+  </targetApplication>
+</extension>

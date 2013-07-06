@@ -1,0 +1,83 @@
+﻿body 
+{
+    background-color: #000;
+    color: #eee;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+}
+
+#grid table
+{
+    border-collapse: collapse;
+}
+
+#grid td
+{
+    width: 250px;
+/*    border: 1px solid #222; */
+    vertical-align: top;
+    padding: 20px;
+    text-align: center;
+}
+
+#grid p
+{
+    margin: 5px 0px 0px 0px;
+}
+
+.button
+{
+    border: 1px solid #333;
+    background-color: #0a0a0a;
+    padding: 15px;
+}
+
+a:link.button, a:visited.button
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover.button, a:active.button
+{
+    background-color: #222;
+    text-decoration: underline;
+}
+
+a:link.album, a:visited.album
+{
+    color: #888;
+    text-decoration: none;
+}
+
+a:hover.album, a:active.album
+{
+    color: #888;
+    text-decoration: underline;
+}
+
+.hspacer
+{
+    margin: 20px 0px 0px 0px;
+}
+
+.vspacer
+{
+    margin: 0px 0px 0px 20px;
+}
+
+.floatleft
+{
+    float: left;
+}
+
+.floatright
+{
+    float: right;
+}
+
+img.cover
+{
+    width: 200px;
+    height: 200px;
+}

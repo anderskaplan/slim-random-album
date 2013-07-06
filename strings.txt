@@ -1,0 +1,10 @@
+# String file for RandomAlbum plugin
+#
+# Any string you want to display should be defined here.
+# It makes it easier to support multiple languages
+
+PLUGIN_RANDOM_ALBUM
+	EN	Random Album
+
+PLUGIN_RANDOM_ALBUM_DESC
+	EN	Picks albums at random from your music library and displays them on a web page where they can be clicked to play. Works great on tablets where the standard web UI falls short.

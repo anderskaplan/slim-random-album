@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Random Album</title>
+    <link rel="stylesheet" type="text/css" href="albums.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+
+        function updateTable(data) {
+            var tableHtml = '<table>';
+
+            tableHtml +=
+                '<tr>' +
+                    '<td colspan="' + data[0].length + '">' +
+                        '<a class="button floatleft" href="/">&laquo; Main</a>' +
+	                    '<a class="button floatright" id="shuffle" href="#">Shuffle</a>' +
+                        '<div class="hspacer" />' +
+	                '</td>' +
+	            '</tr>';
+
+            var albumUrlMap = {};
+            var index = 0;
+            data.forEach(function (row) {
+                tableHtml += '<tr>';
+
+                row.forEach(function (column) {
+                    // albums.id, albums.title, albums.artwork, contributors.name
+
+                    ++index;
+                    albumUrlMap['a' + index] = 'play_' + column[0];
+                    var albumLink = '<a class="album" id="a' + index + '" href="#">';
+
+                    var imageLink = '<img class="cover" src="html/images/nonesuch.png" alt="cover" />';
+                    if (column[3]) {
+                        imageLink = '<img class="cover" src="/music/' + column[3] + '/cover_200x200_p.jpg" alt="cover" />';
+                    }
+
+                    tableHtml += '<td>' + albumLink + imageLink + '<p>' + column[1] + '</p><p>' + column[2] + '</p></a></td>';
+                });
+
+                tableHtml += '</tr>';
+            });
+
+            tableHtml += '</table>';
+
+            $('#grid').html(tableHtml);
+
+            $('#shuffle').click(function () {
+                refresh();
+                return false;
+            });
+
+            $('a.album').click(function (e) {
+                var id = e.currentTarget.id;
+                var url = albumUrlMap[id];
+                $.ajax({
+                    url: url
+                });
+                return false;
+            });
+        }
+
+        function refresh() {
+            var rows = Math.max(2, Math.floor(($(window).height() - 100) / 300));
+            var cols = Math.max(2, Math.floor($(window).width() / 300));
+
+            $.ajax({
+                url: 'list_' + cols + 'x' + rows,
+                success: function (resultJSON) {
+                    var data = $.parseJSON(resultJSON);
+                    updateTable(data);
+                },
+                error: function (err) {
+                    alert(err);
+                }
+            });
+        }
+
+        $(function () {
+            // document is ready
+
+            // break out of the frame
+            if (top.location != location) {
+                top.location.href = document.location.href;
+            }
+
+            refresh();
+        });
+
+//]]>
+    </script>
+</head>
+<body>
+    <div id="grid">
+        <a class="button" href="/">&laquo; Main</a>
+    </div>
+</body>
+</html>
