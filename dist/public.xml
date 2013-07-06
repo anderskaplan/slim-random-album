@@ -6,9 +6,9 @@
 <plugin name="RandomAlbum" version="1.0" minTarget="7.5" maxTarget="*">
 <title lang="EN">Random Album</title>
 <desc lang="EN">Picks albums at random from your music library and displays them on a web page where they can be clicked to play. Works great on tablets where the standard web UI falls short.</desc>
-<url>https://github.com/anderskaplan/slim-random-album/dist/RandomAlbum.zip</url>
+<url>https://raw.github.com/anderskaplan/slim-random-album/master/dist/RandomAlbum.zip</url>
 <link>https://github.com/anderskaplan/slim-random-album</link>
-<sha>d26b69107d10aa5c37cb6ad58c162e19bc50fd1e</sha>
+<sha>08fb4f527c43d755aa3dd01ff08bf01b8c3de666</sha>
 <creator>Anders Kaplan</creator>
 </plugin>
 </plugins>
